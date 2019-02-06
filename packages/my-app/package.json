@@ -30,5 +30,6 @@
   },
   "dependencies": {
     "test": "^0.0.2"
-  }
+  },
+  "gitHead": "31e9ce3fbd0f176eb7cd26517772fdca78c943a5"
 }

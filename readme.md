@@ -5,11 +5,11 @@
 
 # Initialize project
 `git init lerna-demo && cd lerna-demo`
-`git remote add origin https://github.com/emielkwakkel/lerna-demo.git`
+`git remote add origin https://github.com/emielkwakkel/lerna-demo-hr.git`
 `git push -u origin master`
 `lerna init`
 
-# Set registry
+# Set registry / add Gitignore
 .npmrc
 ```bash
 @types:registry=http://registry.npmjs.org
@@ -19,30 +19,99 @@ progress=false
 strict-ssl=false
 ```
 
-.gitignore
-```bash
-node_modules
+.gitignore `node_modules`
+
+# Setup Yarn Workspaces
+/package.json
+```json
+{
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}
+```
+
+lerna.json
+```json
+{"npmClient": "yarn",
+"useWorkspaces": true,}
 ```
 
 `lerna create calculator`
-Add Calculator class with sum method.
+Add calculator function, which sums up.
 `git add . && git commit -am 'chore(calculator) add sum' && git push`
 `lerna publish`
 
 `lerna create my-app`
-`git add . && git commit -am 'chore(@hr-apps/my-app) create app' && git push`
+`git add . && git commit -am 'chore(my-app) create app' && git push`
 `lerna publish`
 
 
 `lerna bootstrap`
-```
+```javascript
 const calc = require('calculator');
-
 function myApp() {
     console.log(calc(1,2));
 }
-
 myApp();
 ```
+`lerna add calculator --scope my-app`
 
-`lerna add @hr-shared/calculator --scope @hr-apps/my-app`
+my-app package.json
+```json
+{"start": "node ./src/my-app"}
+```
+
+`lerna run start --stream --scope my-app
+
+
+GraphQL
+http://try.sangria-graphql.org/playground
+```
+query HumanAndDroids {
+  human(id: "1003") {
+    name
+    appearsIn
+    homePlanet
+  }
+}
+```
+
+add
+```
+droid(id: "2001") {
+    name
+    appearsIn
+    primaryFunction
+}
+```
+
+## query variables
+```
+query HumanAndDroids($humanId: String!) {
+  human(id: $humanId) {
+    name
+    appearsIn
+    homePlanet
+  }
+
+  droid(id: "2001") {
+    name
+    appearsIn
+    primaryFunction
+  }
+}
+
+{
+  "humanId":  "1003"
+}
+```
+
+## Fragment
+```
+fragment Common on Character {
+  name
+  appearsIn
+}
+```
