@@ -1,6 +1,6 @@
 {
   "name": "@hr-apps/my-app",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "> TODO: description",
   "author": "Emiel Kwakkel <emiel.kwakkel@rabobank.nl>",
   "homepage": "https://github.com/emielkwakkel/lerna-demo#readme",
@@ -29,6 +29,6 @@
     "url": "https://github.com/emielkwakkel/lerna-demo/issues"
   },
   "dependencies": {
-    "test": "^0.0.1"
+    "test": "^0.0.2"
   }
 }
