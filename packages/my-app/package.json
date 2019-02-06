@@ -1,6 +1,6 @@
 {
   "name": "@hr-apps/my-app",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.1",
   "description": "> TODO: description",
   "author": "Emiel Kwakkel <emiel.kwakkel@rabobank.nl>",
   "homepage": "https://github.com/emielkwakkel/lerna-demo#readme",
