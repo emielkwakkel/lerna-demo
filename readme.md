@@ -4,22 +4,7 @@
 `npm adduser --registry http://localhost:4873/`
 
 # Initialize project
-`git init lerna-demo && cd lerna-demo`
-`git remote add origin https://github.com/emielkwakkel/lerna-demo-hr.git`
-`git push -u origin master`
 `lerna init`
-
-# Set registry / add Gitignore
-.npmrc
-```bash
-@types:registry=http://registry.npmjs.org
-#registry=http://localhost:4873/
-registry=http://registry.npmjs.org
-progress=false
-strict-ssl=false
-```
-
-.gitignore `node_modules`
 
 # Setup Yarn Workspaces
 /package.json
@@ -46,7 +31,6 @@ Add calculator function, which sums up.
 `lerna create my-app`
 `git add . && git commit -am 'chore(my-app) create app' && git push`
 `lerna publish`
-
 
 `lerna bootstrap`
 ```javascript
