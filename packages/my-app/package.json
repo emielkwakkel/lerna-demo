@@ -22,9 +22,13 @@
     "url": "git+https://github.com/emielkwakkel/lerna-demo.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "start": "node ./src/my-app"
   },
   "bugs": {
     "url": "https://github.com/emielkwakkel/lerna-demo/issues"
+  },
+  "dependencies": {
+    "test": "^0.0.1"
   }
 }
