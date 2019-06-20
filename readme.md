@@ -20,11 +20,12 @@ strict-ssl=false
 
 
 ## Run private npm repository
-- `npm install -g sinopia`
-- `sinopia`
+- `npm install -g verdaccio`
+- `verdaccio`
 - `npm unpublish [package]` to remove packages published from previous demos
 - `npm set registry http://localhost:4873`
 - `npm adduser --registry http://localhost:4873/`
+- username / password: verdaccio
 
 # Initialize project
 - Show Github repository
@@ -57,6 +58,13 @@ strict-ssl=false
 ## Calculator
 - `lerna create @my-app/calculator`
 - Add calculator function, which sums up.
+``` javascript
+module.exports = calculator;
+
+function calculator(a,b) {
+    return a + b;
+}
+```
 - `git status && git add . && git commit -am 'chore(@my-app/calculator): add calculator' && git push`
 - `lerna publish --conventional-commits`
 
